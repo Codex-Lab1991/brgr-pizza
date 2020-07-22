@@ -1,0 +1,40 @@
+.footer {
+  grid-column: full-start/ full-end;
+  padding: 3rem 6rem;
+  background: $clr-black;
+  color: $clr-grey-md;
+  font-size: 1.4rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(4, minmax(20rem, 1fr));
+
+  &__contact {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 1rem;
+    }
+  }
+
+  &__hours {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-media {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.subfooter {
+  grid-column: full-start/ full-end;
+  background: $clr-black;
+  color: $clr-grey-md;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid $clr-grey-dark;
+}

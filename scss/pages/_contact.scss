@@ -1,0 +1,49 @@
+.contact {
+  padding-top: 20rem;
+
+  &__area {
+    margin-top: 4rem;
+    display: flex;
+  }
+
+  &__map-container {
+    width: 50%;
+    position: relative;
+  }
+
+  &__map {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(45%, -50%);
+    z-index: 400;
+  }
+
+  &__box-skew {
+    background: $clr-primary;
+    max-width: 35rem;
+    padding: 1rem 7rem 1rem 3rem;
+    color: $clr-white;
+    transform: translateY(-50%) skew(-20deg);
+
+    position: absolute;
+    top: 50%;
+    right: 2%;
+  }
+
+  &__form {
+    align-self: center;
+    padding: 3rem 10rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: $box-shadow-1;
+    border-radius: $bor-rad-1;
+  }
+}

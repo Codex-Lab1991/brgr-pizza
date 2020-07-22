@@ -1,0 +1,44 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px, 10px / 16px = 62.5%
+
+  @include respond(tab-land) {
+    //width < 1200px
+    font-size: 56.25%; // 1rem = 9px, 16/9
+  }
+  @include respond(tab-port) {
+    //width < 900px
+    font-size: 50%; // 1rem = 8px, 16/8
+  }
+  @include respond(big-desktop) {
+    //width > 1800px
+    font-size: 75%; // 1rem = 12px, 16/12
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $font-normal-text;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $clr-text;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: minmax(40rem, 85vh);
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start]
+    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+}

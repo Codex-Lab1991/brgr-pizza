@@ -1,0 +1,62 @@
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: $font-tittles;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+  padding: 1em 2em;
+  font-weight: 400;
+  border-radius: $bor-rad-1;
+  transition: all 0.2s linear;
+
+  &--lg {
+    font-size: 1.35rem;
+  }
+
+  &--sm {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    transform: translateY(-2%);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    transform: translateY(-1%);
+    filter: brightness(85%);
+  }
+
+  &--gradient {
+    color: $clr-white;
+    background: $main-bg;
+  }
+
+  &--outline {
+    background: $clr-transparent;
+    color: $clr-secondary;
+    padding: 0.8em 1.8em;
+    border: 2px solid currentColor;
+  }
+
+  &--submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: $bor-rad-2;
+
+    &:hover {
+      transform: translate(0);
+    }
+  }
+
+  &--card {
+    background-color: inherit;
+    border: 2px solid currentColor;
+    align-self: stretch;
+  }
+}

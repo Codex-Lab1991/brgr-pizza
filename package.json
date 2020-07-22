@@ -1,0 +1,17 @@
+{
+  "name": "brgr-pizza",
+  "version": "1.0.0",
+  "description": "Brgr&Pizza website",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass scss/style.scss css/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CDEV",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.6"
+  }
+}

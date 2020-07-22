@@ -1,0 +1,98 @@
+.header {
+  grid-column: full-start / full-end;
+  padding: 2.5rem 8rem 2rem;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  font-weight: 400;
+  color: $clr-white;
+  transition: all 0.3s linear;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &__contact {
+    display: flex;
+    align-items: center;
+  }
+
+  &--contact {
+    color: $clr-text;
+  }
+
+  &.sticky {
+    border-bottom: none;
+    box-shadow: 0 0.5rem 3rem $clr-grey-dark;
+    padding: 1rem 8rem;
+
+    &--home {
+      background-color: $clr-secondary;
+    }
+
+    .nav__link.active,
+    .nav__link:hover {
+      background: $clr-text;
+    }
+
+    &--menu {
+      background: $clr-grey-shadow;
+    }
+
+    &--contact {
+      background: $clr-secondary;
+      color: $clr-white;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.nav {
+  font-family: $font-tittles;
+
+  &__menu {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__item:not(:last-of-type) {
+    margin-right: 3rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    padding: 0.2rem 2.5rem;
+    border-radius: 1px;
+    color: inherit;
+    transition: background 0.35s ease-in-out;
+
+    &:hover,
+    &.active {
+      background: $clr-primary;
+    }
+
+    &--dark {
+      &:hover,
+      &.active {
+        background: $clr-text;
+      }
+    }
+  }
+}

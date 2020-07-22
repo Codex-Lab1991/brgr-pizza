@@ -1,0 +1,60 @@
+.testimonials {
+  grid-column: full-start/ full-end;
+  background: $clr-grey-md;
+  padding: 10rem 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &__nr {
+    text-align: right;
+    font-size: 7rem;
+    font-family: $font-tittles;
+    font-weight: 500;
+    line-height: 1;
+    width: 25%;
+  }
+
+  &__next {
+    margin-top: 5rem;
+    display: flex;
+    line-height: 1;
+    align-items: center;
+    justify-content: flex-end;
+    letter-spacing: 0.1em;
+
+    border: 2px solid $clr-secondary;
+    border-radius: $bor-rad-1;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.2s linear;
+
+    &:hover {
+      background: $main-bg;
+      color: $clr-white;
+      border: 2px solid $clr-transparent;
+      transform: translateY(-2%);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    }
+
+    .coord {
+      font-size: 5rem;
+      margin-top: -0.7rem;
+    }
+  }
+
+  &__img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: -5rem;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    fill: $clr-grey-md;
+    display: block;
+    margin: 0.2rem auto 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}

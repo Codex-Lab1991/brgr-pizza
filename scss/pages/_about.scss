@@ -1,0 +1,66 @@
+.about {
+  &__header {
+    background: linear-gradient(to right top, $clr-primary, $clr-secondary 70%);
+    padding: 20rem 0 5rem;
+    position: relative;
+    color: $clr-white;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    transform: translateY(1rem);
+  }
+}
+
+.ofert {
+  font-family: $font-tittles;
+  font-size: 2.2rem;
+  background: $clr-grey-light;
+  padding: 2rem 8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__price {
+    font-size: 5rem;
+    font-family: $font-normal-text;
+    font-weight: 600;
+  }
+}
+
+.popular {
+  padding: 5rem 8rem;
+
+  &__cards {
+    margin: 10rem 0 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(20rem, 23rem));
+    justify-content: center;
+    grid-gap: 3rem;
+  }
+
+  .card::before {
+    content: "new";
+    position: absolute;
+    color: $clr-white;
+    text-transform: uppercase;
+    font-family: $font-tittles;
+    font-size: 1.5rem;
+    top: -5rem;
+    right: 7.5rem;
+    transform: rotate(30deg);
+    z-index: 101;
+  }
+}

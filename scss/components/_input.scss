@@ -1,0 +1,30 @@
+.input {
+  outline: none;
+  border: 1px solid currentColor;
+  padding: 0.9em 1.125em;
+  border-radius: $bor-rad-1;
+  width: 100%;
+
+  &--contact {
+    color: $clr-grey-dark;
+    margin-bottom: 1rem;
+  }
+
+  &--banner {
+    background: $clr-transparent;
+    color: $clr-grey-md;
+  }
+
+  &--menu {
+    color: $clr-grey-dark;
+    font-family: $font-normal-text;
+    border: 1px solid $clr-grey-md;
+  }
+
+  &::-webkit-input-placeholder {
+    font-family: $font-tittles;
+    color: currentColor;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}

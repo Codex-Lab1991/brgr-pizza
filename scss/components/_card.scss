@@ -1,0 +1,103 @@
+.card {
+  box-shadow: $box-shadow-1;
+  border-radius: $bor-rad-1;
+  display: flex;
+  align-items: center;
+
+  &--sm {
+    padding: 0 3rem 3rem;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &--lg {
+    margin: 7rem 10rem;
+    padding: 2rem 5rem;
+  }
+
+  // ELEMENTE COMUNE
+
+  &__img {
+    filter: drop-shadow(0.2rem 0.5rem 0.5rem $clr-grey-shadow);
+
+    &--big {
+      width: 100%;
+    }
+
+    &--moved {
+      margin-top: -5rem;
+    }
+  }
+
+  &__shape {
+    z-index: 100;
+    position: absolute;
+    transform: rotate(30deg);
+
+    &--sm {
+      top: -5rem;
+      right: 5rem;
+      width: 7.5rem;
+    }
+
+    &--lg {
+    }
+  }
+
+  // ELEMENTE DIN CARD SM
+
+  &__figure {
+    border: 2px solid $clr-grey-md;
+    text-align: center;
+    width: 25%;
+    max-width: 30rem;
+  }
+
+  &__price {
+    margin: 1.5rem;
+    font-family: $font-tittles;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  &:hover .btn {
+    color: $clr-white;
+    background: linear-gradient(to right top, $clr-primary, $clr-secondary);
+    border: 2px solid $clr-transparent;
+  }
+
+  // ELEMENTE DIN CARD LG
+
+  &__info {
+    flex: 1 1 45rem;
+    padding: 0 5rem;
+  }
+
+  &__ingredients {
+    padding-left: 5rem;
+    border-left: 2px solid $clr-grey-md;
+    flex: 1 0 15rem;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__ingredient {
+    text-transform: uppercase;
+    font-family: $font-tittles;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: $clr-primary;
+      border-radius: 50%;
+      width: 0.5rem;
+      height: 0.5rem;
+      top: 50%;
+      left: -2rem;
+      transform: translateY(-50%);
+    }
+  }
+}

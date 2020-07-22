@@ -1,0 +1,107 @@
+.menu {
+  &__header {
+    background: $main-bg;
+    padding: 20rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+    color: $clr-white;
+
+    h1 {
+      // only for stacking context
+      transform: translateY(1rem);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__selections {
+    background: $clr-grey-light;
+    padding: 2rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__form {
+    position: relative;
+    width: 30%;
+  }
+
+  // DROPDOWN MENU
+  .category {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s linear;
+
+      .rotate {
+        transition: $animate-1;
+      }
+
+      .animate {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__box {
+      width: 15rem;
+      color: $clr-grey-dark;
+      border: 1px solid $clr-grey-md;
+      background-color: $clr-white;
+      font-size: 1.3rem;
+      border-radius: $bor-rad-1;
+      padding: 0.85rem 1rem;
+      position: relative;
+
+      ul {
+        list-style-type: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        background-color: inherit;
+        border: inherit;
+        transition: $animate-1;
+      }
+      // ***** DISSAPEARE / APPEARE *****
+      #category {
+        height: 0;
+        overflow: hidden;
+      }
+
+      #category.active {
+        height: 510%;
+      }
+    }
+
+    &__item {
+      padding: 0.85rem 1rem;
+      transition: all 0.3s linear;
+
+      &:hover {
+        cursor: pointer;
+        color: $clr-primary;
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: inherit;
+      }
+    }
+  }
+
+  &__cards {
+    margin: 15rem 10rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 25rem));
+    justify-content: center;
+    grid-column-gap: 3rem;
+    grid-row-gap: 7rem;
+  }
+}

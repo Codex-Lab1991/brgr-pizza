@@ -1,0 +1,58 @@
+.carousel {
+  overflow-x: hidden;
+  width: 88rem;
+  border: 1px solid $clr-grey-shadow;
+  border-radius: $bor-rad-1;
+
+  &__slide {
+    padding: 9rem 5rem 4rem;
+    display: flex;
+    width: 100%;
+  }
+
+  &__item {
+    min-width: 23rem;
+    background-color: $clr-white;
+    text-align: center;
+    padding: 0 3rem 3rem;
+    opacity: 0.5;
+    border-radius: 3px;
+    transition: all 0.3s linear;
+
+    &:not(:last-of-type) {
+      // px este necesar ca este satata distanta in js in px
+      margin-right: 50px;
+    }
+
+    &--active {
+      opacity: 1;
+      transform: scale(1.1);
+      position: relative;
+
+      &::before {
+        content: "\1f800";
+        font-size: 4rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -2.5rem;
+      }
+
+      &::after {
+        content: "\1f802";
+        font-size: 4rem;
+        color: $clr-primary;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2.5rem;
+      }
+
+      .btn {
+        color: $clr-white;
+        background: linear-gradient(to right, $clr-primary, $clr-secondary);
+        border: 2px solid $clr-transparent;
+      }
+    }
+  }
+}
