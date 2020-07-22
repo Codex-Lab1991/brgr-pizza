@@ -49,18 +49,24 @@ const testimonials = [
   },
   {
     id: 7,
+    img: "img/person-6.jpg",
+    name: "Keisha Mac",
+    text: "Corporis veritatis repudiandae nobis praesentium voluptatum.",
+  },
+  {
+    id: 8,
     img: "img/person-0.jpg",
     name: "Jonas Ford",
     text: "Ipsum dolor sit amet. Nemo, quos quasi voluptatum elitis.",
   },
   {
-    id: 8,
+    id: 9,
     img: "img/person-1.jpg",
     name: "Jonas Ford",
     text: "Corporis veritatis repudiandae nobis praesentium voluptatum.",
   },
   {
-    id: 9,
+    id: 10,
     img: "img/person-2.jpg",
     name: "Jonas Ford",
     text: "Sequi distinctio magni asperiores saepe quisquam.",
