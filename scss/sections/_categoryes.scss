@@ -1,21 +1,42 @@
 .categoryes {
   grid-column: full-start / full-end;
   background-color: $clr-grey-light;
-  padding: 20rem 8rem 15rem;
+  padding: 9.375em 5em; /////**********
   display: flex;
   justify-content: space-around;
   align-items: center;
 
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
+
+  @include respond(tab-port) {
+    padding: 9.375em 1.25em 5em;
+  }
+
+  // @include respond(phone) {
+  //   padding
+  // }
+
   &__desc {
     margin-right: 5rem;
     max-width: 50rem;
+
+    @include respond(tab-land) {
+      text-align: center;
+      margin-bottom: 10rem;
+      margin-right: 0;
+    }
   }
 
   &__items {
-    flex: 1;
-    max-width: 70rem;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(17rem, 21rem));
+    grid-column-gap: 5rem;
+
+    @include respond(phone) {
+      grid-template-columns: minmax(17rem, 25rem);
+    }
   }
 
   .category {
@@ -24,15 +45,13 @@
       text-align: center;
       border-radius: 2px;
       padding-bottom: 3rem;
-      margin-right: 7rem;
-      flex: 1;
 
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
 
-      &:last-of-type {
-        margin-right: 0;
+      @include respond(phone) {
+        margin-bottom: 7rem;
       }
 
       h3::first-letter {
@@ -47,7 +66,7 @@
 
     &__img {
       width: 100%;
-      filter: drop-shadow(0 0.5rem 0.5rem #444);
+      filter: $img-shadow-2;
     }
 
     &__time {

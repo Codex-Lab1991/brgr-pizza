@@ -1,11 +1,23 @@
 .testimonials {
   grid-column: full-start/ full-end;
   background: $clr-grey-md;
-  padding: 10rem 6rem;
+  padding: 6.25em 5em; /////**********
 
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
+
+  @include respond(tab-port) {
+    padding: 6.25em 1.25em;
+  }
+
+  &__info {
+    margin-bottom: 8rem;
+  }
 
   &__nr {
     text-align: right;
@@ -13,11 +25,19 @@
     font-family: $font-tittles;
     font-weight: 500;
     line-height: 1;
-    width: 25%;
+    margin-bottom: 1em;
+
+    @include respond(tab-land) {
+      text-align: center;
+      font-size: 6rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 5rem;
+    }
   }
 
   &__next {
-    margin-top: 5rem;
     display: flex;
     line-height: 1;
     align-items: center;

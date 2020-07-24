@@ -21,15 +21,20 @@
 
   &__selections {
     background: $clr-grey-light;
-    padding: 2rem 10rem;
+    padding: 1.25em 6.25em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(phone) {
+      padding: 1.25em;
+    }
   }
 
   &__form {
     position: relative;
     width: 30%;
+    min-width: 25rem;
   }
 
   // DROPDOWN MENU
@@ -97,7 +102,7 @@
   }
 
   &__cards {
-    margin: 15rem 10rem 5rem;
+    margin: 9.375em 6.25em 3.125em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(23rem, 25rem));
     justify-content: center;

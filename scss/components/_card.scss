@@ -11,14 +11,23 @@
   }
 
   &--lg {
-    margin: 7rem 10rem;
-    padding: 2rem 5rem;
+    margin: 4.375em 6.25em;
+    padding: 1.25em 3.125em;
+
+    @include respond(tab-land) {
+      margin: 4.375em;
+    }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      gap: 4em;
+    }
   }
 
   // ELEMENTE COMUNE
 
   &__img {
-    filter: drop-shadow(0.2rem 0.5rem 0.5rem $clr-grey-shadow);
+    filter: $img-shadow-1;
 
     &--big {
       width: 100%;
@@ -39,19 +48,9 @@
       right: 5rem;
       width: 7.5rem;
     }
-
-    &--lg {
-    }
   }
 
   // ELEMENTE DIN CARD SM
-
-  &__figure {
-    border: 2px solid $clr-grey-md;
-    text-align: center;
-    width: 25%;
-    max-width: 30rem;
-  }
 
   &__price {
     margin: 1.5rem;
@@ -71,6 +70,28 @@
   &__info {
     flex: 1 1 45rem;
     padding: 0 5rem;
+
+    @include respond(tab-port) {
+      text-align: center;
+      flex: none;
+      max-width: 60%;
+      padding: 0;
+    }
+  }
+
+  &__figure {
+    border: 2px solid $clr-grey-md;
+    text-align: center;
+    width: 25%;
+    max-width: 30rem;
+
+    @include respond(tab-port) {
+      width: 35%;
+    }
+
+    @include respond(tab-port) {
+      width: 50%;
+    }
   }
 
   &__ingredients {

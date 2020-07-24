@@ -4,16 +4,27 @@
   &__area {
     margin-top: 4rem;
     display: flex;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
   }
 
   &__map-container {
     width: 50%;
     position: relative;
+
+    @include respond(tab-port) {
+      width: 100%;
+      height: 40rem;
+      order: 1;
+    }
   }
 
   &__map {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   &__img {
@@ -22,6 +33,10 @@
     right: 0;
     transform: translate(45%, -50%);
     z-index: 400;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__box-skew {
@@ -34,16 +49,30 @@
     position: absolute;
     top: 50%;
     right: 2%;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__form {
     align-self: center;
-    padding: 3rem 10rem;
+    padding: 1.875em 6.25em;
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     box-shadow: $box-shadow-1;
     border-radius: $bor-rad-1;
+
+    @include respond(tab-port) {
+      width: 60%;
+      margin-bottom: 4rem;
+      margin-top: 2rem;
+    }
+
+    @include respond(phone) {
+      width: 80%;
+    }
   }
 }

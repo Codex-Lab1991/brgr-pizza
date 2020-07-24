@@ -4,6 +4,14 @@
   border: 1px solid $clr-grey-shadow;
   border-radius: $bor-rad-1;
 
+  @include respond(tab-land) {
+    width: 90rem;
+  }
+
+  @include respond(tab-port) {
+    width: 90%;
+  }
+
   &__slide {
     padding: 9rem 5rem 4rem;
     display: flex;
@@ -20,7 +28,7 @@
     transition: all 0.3s linear;
 
     &:not(:last-of-type) {
-      // px este necesar ca este satata distanta in js in px
+      // px este necesar ca este setata distanta in js in px
       margin-right: 50px;
     }
 

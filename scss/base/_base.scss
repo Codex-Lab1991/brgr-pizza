@@ -25,20 +25,33 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: $font-normal-text;
-  line-height: 1.6;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: $clr-text;
 }
 
 .container {
   display: grid;
-  grid-template-rows: minmax(40rem, 85vh);
+  grid-template-rows: minmax(40rem, 80vh);
   grid-template-columns:
     [full-start] minmax(6rem, 1fr)
     [center-start]
     repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end]
     minmax(6rem, 1fr) [full-end];
+
+  // @include respond(tab-port) {
+  //   grid-template-columns:
+  //     [full-start] minmax(4rem, 1fr)
+  //     [center-start]
+  //     repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+  //     [center-end]
+  //     minmax(4rem, 1fr) [full-end];
+  // }
+
+  // @include respond(phone) {
+  //   grid-template-columns:
+  //     [full-start] minmax(1rem, 1fr)
+  //     [center-start]
+  //     repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+  //     [center-end]
+  //     minmax(1rem, 1fr) [full-end];
+  // }
 }

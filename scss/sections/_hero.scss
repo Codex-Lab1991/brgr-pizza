@@ -1,14 +1,14 @@
 .hero {
+  grid-column: full-start / full-end;
   background-image: linear-gradient(
       to right top,
-      rgba($clr-primary, 0.1),
-      rgba($clr-secondary, 0.1) 70%
+      rgba($clr-primary, 0.65),
+      rgba($clr-grey-dark, 0.65) 40%
     ),
     url(../img/hero-bg.jpg);
   background-size: cover;
   background-position: 50% 100%;
   color: $clr-white;
-  grid-column: full-start / full-end;
   position: relative;
 
   display: flex;
@@ -16,10 +16,18 @@
   align-items: flex-start;
   justify-content: center;
 
+  @include respond(phone) {
+    align-items: center;
+    text-align: center;
+  }
+
   &__container {
     max-width: 50rem;
-    margin-top: 10.5rem;
-    margin-left: 8rem;
+    margin: 6.875em 5em 0; /////**********
+
+    @include respond(phone) {
+      margin: 6.875em 1.25em;
+    }
   }
 
   &::before {
