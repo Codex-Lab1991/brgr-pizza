@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-end;
 
   @include respond(phone) {
     align-items: center;
@@ -23,10 +23,10 @@
 
   &__container {
     max-width: 50rem;
-    margin: 6.875em 5em 0; /////**********
+    margin: 9.5em 5em 3em; /////**********
 
     @include respond(phone) {
-      margin: 6.875em 1.25em;
+      margin: 9.5em 1.25em 3em;
     }
   }
 

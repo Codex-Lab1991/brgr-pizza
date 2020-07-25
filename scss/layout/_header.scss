@@ -5,7 +5,7 @@
   background: transparent;
   font-weight: 400;
   color: $clr-white;
-  transition: all 0.3s linear;
+  transition: padding 0.3s linear;
 
   display: flex;
   align-items: center;
@@ -20,6 +20,10 @@
   &__contact {
     display: flex;
     align-items: center;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &--contact {
@@ -29,7 +33,7 @@
   &.sticky {
     border-bottom: none;
     box-shadow: 0 0.5rem 3rem $clr-grey-dark;
-    padding: 1rem 8rem;
+    padding: 2rem 8rem;
 
     &--home {
       background-color: $clr-secondary;
@@ -41,7 +45,7 @@
     }
 
     &--menu {
-      background: $clr-grey-shadow;
+      background: $clr-grey-dark;
     }
 
     &--contact {
@@ -65,12 +69,50 @@
   font-family: $font-tittles;
 
   &__menu {
+    // VERY IMPORTANT TO BE IN THIS ORDER
+    // ELSE THE HEIGHT WILL NOT WORK
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: space-evenly;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 5em;
+      background-color: $clr-secondary;
+      height: 0;
+      overflow: hidden;
+      z-index: -1;
+
+      &.toggled {
+        padding-top: 9.5rem;
+        padding-bottom: 2rem;
+        height: 27rem;
+
+        .nav__link {
+          opacity: 1;
+          transition: opacity 0.2s linear 0.2s;
+        }
+      }
+    }
+
     list-style-type: none;
     display: flex;
+    height: auto;
+    transition: height 0.3s cubic-bezier(0.69, 0.08, 0, 1.54);
   }
 
   &__item:not(:last-of-type) {
     margin-right: 3rem;
+
+    @include respond(tab-land) {
+      margin-right: 2.5rem;
+    }
+
+    @include respond(tab-port) {
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
   }
 
   &__link {
@@ -81,18 +123,86 @@
     padding: 0.2rem 2.5rem;
     border-radius: 1px;
     color: inherit;
-    transition: background 0.35s ease-in-out;
+    transition: background-color 0.35s ease-in-out;
+
+    @include respond(tab-port) {
+      opacity: 0;
+    }
 
     &:hover,
     &.active {
-      background: $clr-primary;
+      background-color: $clr-primary;
     }
 
     &--dark {
       &:hover,
       &.active {
-        background: $clr-text;
+        background-color: $clr-text;
       }
+    }
+  }
+}
+
+.navigation {
+  &__toggler {
+    position: absolute;
+    right: 7rem;
+    color: $clr-grey-shadow;
+    border-radius: $bor-rad-1;
+    padding: 1.25em 0.8em;
+    display: flex;
+    cursor: pointer;
+    display: none;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+
+    &.checked {
+      .navigation__icon {
+        background-color: $clr-transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(-135deg);
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    transition: all 0.2s linear;
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 2px;
+    background-color: currentColor;
+
+    &::before {
+      content: "";
+      width: 3rem;
+      height: 2px;
+      position: absolute;
+      background-color: currentColor;
+      left: 0;
+      top: 1rem;
+      transition: all 0.2s linear;
+    }
+
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 2px;
+      position: absolute;
+      background-color: currentColor;
+      left: 0;
+      top: -1rem;
+      transition: all 0.2s linear;
     }
   }
 }
