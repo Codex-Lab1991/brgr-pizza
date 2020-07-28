@@ -9,6 +9,11 @@ body {
   color: $clr-text;
 }
 
+::selection {
+  color: $clr-white;
+  background-color: $clr-secondary;
+}
+
 h1,
 h2,
 h3,

@@ -16,30 +16,35 @@
   align-items: flex-start;
   justify-content: flex-end;
 
+  @include respond(tab-port) {
+    justify-content: center;
+  }
+
   @include respond(phone) {
     align-items: center;
     text-align: center;
   }
 
   &__container {
-    max-width: 50rem;
-    margin: 9.5em 5em 3em; /////**********
+    max-width: 55rem;
+    margin: 9.5em 5em 3em;
 
     @include respond(phone) {
-      margin: 9.5em 1.25em 3em;
+      margin-left: 1.25em;
+      margin-right: 1.25em;
     }
   }
 
   &::before {
-    @include arrow(-4rem);
+    @include arrow(-3rem);
   }
 
   &::after {
-    @include arrow(-5.75rem);
+    @include arrow(-4.75rem);
   }
 }
 
-// FOR MOVEING DOWN ARROW
+// FOR MOVEING DOWN ARROWS
 @keyframes arrow {
   0%,
   100% {

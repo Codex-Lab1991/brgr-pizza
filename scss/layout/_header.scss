@@ -1,20 +1,19 @@
 .header {
   grid-column: full-start / full-end;
-  padding: 2.5rem 8rem 2rem;
+  padding: 0.9375em 5em 0.625em;
   border-bottom: 1px solid currentColor;
-  background: transparent;
   font-weight: 400;
   color: $clr-white;
   transition: padding 0.3s linear;
 
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 1000;
 
   &__contact {
@@ -32,15 +31,16 @@
 
   &.sticky {
     border-bottom: none;
-    box-shadow: 0 0.5rem 3rem $clr-grey-dark;
-    padding: 2rem 8rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.35);
+    padding: 0.625em 5em;
 
     &--home {
       background-color: $clr-secondary;
     }
 
     .nav__link.active,
-    .nav__link:hover {
+    .nav__link:hover,
+    .nav__link:focus {
       background: $clr-text;
     }
 
@@ -66,11 +66,16 @@
 }
 
 .nav {
+  flex: 1;
+  max-width: 60rem;
   font-family: $font-tittles;
 
   &__menu {
-    // VERY IMPORTANT TO BE IN THIS ORDER
-    // ELSE THE HEIGHT WILL NOT WORK
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    transition: height 0.3s cubic-bezier(0.69, 0.08, 0, 1.54);
+
     @include respond(tab-port) {
       flex-direction: column;
       justify-content: space-evenly;
@@ -85,8 +90,8 @@
       z-index: -1;
 
       &.toggled {
-        padding-top: 9.5rem;
-        padding-bottom: 2rem;
+        padding-top: 5.9375em;
+        padding-bottom: 1.25em;
         height: 27rem;
 
         .nav__link {
@@ -96,34 +101,20 @@
       }
     }
 
-    list-style-type: none;
-    display: flex;
+    // VERY IMPORTANT TO BE IN THIS ORDER
+    // ELSE THE HEIGHT WILL NOT WORK
     height: auto;
-    transition: height 0.3s cubic-bezier(0.69, 0.08, 0, 1.54);
-  }
-
-  &__item:not(:last-of-type) {
-    margin-right: 3rem;
-
-    @include respond(tab-land) {
-      margin-right: 2.5rem;
-    }
-
-    @include respond(tab-port) {
-      margin-right: 0;
-      margin-bottom: 1em;
-    }
   }
 
   &__link {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.4rem;
-    letter-spacing: 0.1rem;
-    padding: 0.2rem 2.5rem;
-    border-radius: 1px;
+    letter-spacing: 0.1em;
+    padding: 0.2em 2em;
+    border-radius: 2px;
     color: inherit;
-    transition: background-color 0.35s ease-in-out;
+    transition: background-color 0.2s linear;
 
     @include respond(tab-port) {
       opacity: 0;
@@ -147,10 +138,10 @@
   &__toggler {
     position: absolute;
     right: 7rem;
+    top: 2rem;
     color: $clr-grey-shadow;
     border-radius: $bor-rad-1;
     padding: 1.25em 0.8em;
-    display: flex;
     cursor: pointer;
     display: none;
 
@@ -184,25 +175,11 @@
     background-color: currentColor;
 
     &::before {
-      content: "";
-      width: 3rem;
-      height: 2px;
-      position: absolute;
-      background-color: currentColor;
-      left: 0;
-      top: 1rem;
-      transition: all 0.2s linear;
+      @include rotate(1rem);
     }
 
     &::after {
-      content: "";
-      width: 3rem;
-      height: 2px;
-      position: absolute;
-      background-color: currentColor;
-      left: 0;
-      top: -1rem;
-      transition: all 0.2s linear;
+      @include rotate(-1rem);
     }
   }
 }

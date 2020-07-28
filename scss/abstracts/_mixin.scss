@@ -50,3 +50,15 @@ $breakpoint argument choices:
   border-radius: $bor-rad-1;
   animation: 3s arrow infinite ease;
 }
+
+// HEADER TOGGLER ICON
+@mixin rotate($param) {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: currentColor;
+  left: 0;
+  top: $param;
+  transition: all 0.2s linear;
+}
