@@ -1,5 +1,12 @@
 "use strict";
 
+// ***** HEADER SCROLL *****
+window.addEventListener("scroll", () => {
+  var header = document.querySelector(".header");
+  header.classList.toggle("sticky", window.scrollY > 0);
+  header.classList.toggle("sticky--menu", window.scrollY > 0);
+});
+
 // ABOUT PAGE MOST POPULAR BURGERS
 const popular = [
   {

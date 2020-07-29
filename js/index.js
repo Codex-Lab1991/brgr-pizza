@@ -1,7 +1,13 @@
 "use strict";
 
-// ***** CAROUSEL *****
+// ***** HEADER SCROLL *****
+window.addEventListener("scroll", () => {
+  var header = document.querySelector(".header");
+  header.classList.toggle("sticky", window.scrollY > 0);
+  header.classList.toggle("sticky--home", window.scrollY > 0);
+});
 
+// ***** CAROUSEL *****
 const testimonials = [
   {
     id: 1,
