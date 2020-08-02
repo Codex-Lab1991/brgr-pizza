@@ -5,22 +5,24 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
-
-  @include respond(tab-land) {
-    flex-direction: column;
-  }
+  justify-content: space-evenly;
+  z-index: 20;
 
   @include respond(tab-port) {
     padding: 6.25em 1.25em;
+    gap: 4rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+    gap: 12rem;
   }
 
   &__info {
-    margin-bottom: 8rem;
+    text-align: center;
   }
 
   &__nr {
-    text-align: right;
     font-size: 7rem;
     font-family: $font-tittles;
     font-weight: 500;
@@ -37,16 +39,69 @@
     }
   }
 
-  &__next {
+  &__card {
+    max-width: 35rem;
+    background-color: $clr-white;
+    border-radius: $bor-rad-1;
+    text-align: center;
+    padding: 0 1.5em 2.75em;
+
+    &:hover .btn {
+      background-color: $clr-secondary;
+      color: $clr-white;
+      border: 2px solid $clr-transparent;
+    }
+  }
+
+  &__figure {
+    display: inline-block;
+    width: 11rem;
+    height: 11rem;
+    margin-top: -5.5rem;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 6%;
+      top: -5%;
+      background-color: $clr-secondary;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    fill: $clr-grey-shadow;
+    display: block;
+    margin: 1em auto;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.controls {
+  display: flex;
+
+  .control {
     display: flex;
     line-height: 1;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     letter-spacing: 0.1em;
 
     border: 2px solid $clr-secondary;
     border-radius: $bor-rad-1;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5em 1.75em;
     transition: all 0.2s linear;
 
     &:hover {
@@ -57,24 +112,13 @@
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
     }
 
-    .coord {
-      font-size: 5rem;
-      margin-top: -0.7rem;
+    &__icon {
+      font-size: 4rem;
+      margin-top: -0.15em;
     }
   }
 
-  &__img {
-    width: 10rem;
-    height: 10rem;
-    margin-top: -5rem;
-    border-radius: 50%;
-  }
-
-  &__icon {
-    fill: $clr-grey-md;
-    display: block;
-    margin: 0.2rem auto 0.5rem;
-    width: 2rem;
-    height: 2rem;
+  .control + .control {
+    margin-left: 2em;
   }
 }
